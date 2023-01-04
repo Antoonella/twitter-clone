@@ -4,19 +4,18 @@ import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
 import RepeatIcon from '@mui/icons-material/Repeat';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import PublishIcon from '@mui/icons-material/Publish';
-import React from 'react';
+import React, {forwardRef} from 'react';
 import "./Post.css";
 
-function Post({
+const Post = forwardRef(({
   displayName,
   username,
   verified,
   text,
   image,
-  avatar,
-}) {
+  avatar }, ref) => {
   return (
-    <div className='post'>
+    <div className='post' ref={ref}>
       <div className="post__avatar">
         <Avatar src={avatar}></Avatar>
       </div>
@@ -45,6 +44,7 @@ function Post({
       </div>
     </div>
   )
-}
+  });
+
 
 export default Post;
