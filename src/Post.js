@@ -18,23 +18,23 @@ function Post({
   return (
     <div className='post'>
       <div className="post__avatar">
-        <Avatar src="https://cdn-icons-png.flaticon.com/512/4140/4140047.png"></Avatar>
+        <Avatar src={avatar}></Avatar>
       </div>
       <div className="post__body">
         <div className="post__header">
           <div className="post__headerText">
             <h3>
-              Sarah Tom {" "} <span className='post__headerSpecial'>
-                 <VerifiedIcon className="post__badge"/>
-                @sarahtom123
+              {displayName} {" "} <span className='post__headerSpecial'>
+                 {verified && <VerifiedIcon className="post__badge"/>}
+                @{username}
               </span>
             </h3>
           </div>
           <div className="post__headerDescription">
-            <p>Yoo It's Working!</p>
+            <p>{text}</p>
           </div>
         </div>
-        <img src="https://media3.giphy.com/media/65ATdpi3clAdjomZ39/giphy.gif" alt="" />
+        <img src={image} alt="" />
         <div className="post__footer">
           <ChatBubbleOutlineIcon fontSize="small"/>
           <RepeatIcon fontSize="small"/>
